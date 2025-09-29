@@ -1,0 +1,19 @@
+<script>
+// find smallest value
+
+let arr = [-10, -20, -30, -40, -50];
+let value = arr[0];
+
+function smallvalue(arr) {
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] < value) {
+            value = arr[i];
+           }
+    }
+    return value;
+}
+
+let result = smallvalue(arr);
+document.write(result);
+
+</script>

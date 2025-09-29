@@ -1,0 +1,34 @@
+<script>
+    let arr = [4, 9, 0, 9, 7, 1, 8];
+
+
+    function findsecondl(arr) {
+
+
+        if (arr.length < 2) {
+           return null;
+        }
+
+        let FirstL = -Infinity;
+        let Secondl = -Infinity;
+
+        for (let i = 0; i < arr.length; i++) {
+
+            if (arr[i] > FirstL) {
+                Secondl = FirstL
+                FirstL = arr[i];
+            }
+            else if (arr[i] > Secondl && arr[i] != FirstL) {
+                Secondl = arr[i];
+               
+            }
+            
+    }
+
+ return Secondl;
+}
+
+    var result = findsecondl(arr);
+    document.write(result);
+
+</script>
