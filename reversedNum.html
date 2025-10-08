@@ -1,0 +1,26 @@
+<script>
+function reverse(num) {
+
+    var rev = 0;
+    while (num > 0) {
+
+        let rem = num % 10; //6  //5 //4
+
+        rev = (rev * 10) + rem;//6  //456
+
+        num = Math.floor(num / 10)//456/10 =45 //45/10=4
+
+        
+    }
+
+    return rev;
+
+
+    
+}
+
+
+
+
+document.write(reverse(456))
+</script>

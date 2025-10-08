@@ -1,0 +1,29 @@
+<script>
+function counter(num) {
+
+
+   return num.toString().length;
+   
+    
+}
+
+
+var result = counter(1234);
+document.write(result);
+
+
+
+
+function countdigit(n) {
+   let count = 0
+   while (n > 0) {
+      n = n / 10;
+      count++;
+   }
+   return count;
+}
+
+let num=123
+var result = countdigit(num);
+console.log(result);
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binary Search - Search Bar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h2 class="mb-4">🔍 Product Search (Binary Search)</h2>
+
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Enter product name...">
+
+    <button onclick="handleSearch()" class="btn btn-primary">Search</button>
+
+    <div id="result" class="mt-4 fs-4"></div>
+  </div>
+
+  <script>
+    // Sorted product list (A-Z)
+    const products = [
+      "Bag", "Battery", "Cable", "Camera", "Charger", "Earphones",
+      "Fan", "Keyboard", "Laptop", "Mic", "Monitor", "Mouse", "Pen Drive", "Power Bank", "Speaker", "Tablet", "USB Hub", "Webcam"
+    ];
+
+    // Binary Search Function
+    function binarySearch(arr, target) {
+      let low = 0;
+      let high = arr.length - 1;
+      target = target.toLowerCase(); // case insensitive
+
+      while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let midVal = arr[mid].toLowerCase();
+
+        if (midVal === target) return mid;
+        else if (midVal < target) low = mid + 1;
+        else high = mid - 1;
+      }
+      return -1;
+    }
+
+    // Handle Search
+    function handleSearch() {
+      const input = document.getElementById("searchInput").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      if (!input) {
+        resultDiv.innerHTML = `<span class="text-danger">Please enter a product name.</span>`;
+        return;
+      }
+
+      const index = binarySearch(products, input);
+
+      if (index !== -1) {
+        resultDiv.innerHTML = `<span class="text-success">✅ "${products[index]}" found at position ${index}.</span>`;
+      } else {
+        resultDiv.innerHTML = `<span class="text-danger">❌ "${input}" not found in the product list.</span>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

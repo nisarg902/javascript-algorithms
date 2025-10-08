@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="number" id="inputValue">
+  <button onclick="BtnClick()">tocheck plaindorem</button>
+  <div id="output">
+    
+  </div>
+    <script>
+
+  function BtnClick(){
+    var num =document.getElementById("inputValue").value;
+    var output =document.getElementById("output");
+    
+     var ReverseNum = num.toString().split('').reverse().join('');
+    if( num=== ReverseNum){
+
+        output.innerText="Palindrome"
+  
+    }else{
+       
+        output.textContent="Not a palindrome";
+    }
+
+  }
+</script>
+</body>
+</html>
